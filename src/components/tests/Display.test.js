@@ -19,6 +19,7 @@ test("renders Show component when the button is clicked ", () => {
 test("renders show season options matching your data when the button is clicked", () => {
   render(<Display />);
   const button = screen.getByTestId("button-test");
-
+  const seasonOptions = screen.findAllByTestId("season-option");
   fireEvent.click(button);
+  expect(seasonOptions).toBeInTheDocument;
 });
